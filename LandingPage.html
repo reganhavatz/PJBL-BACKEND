@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/ftf-indonesiana-serif-hijauwana" rel="stylesheet">
+
+  <title>Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.16;
+      color: #333;
+      zoom: 0.95;
+    }
+
+    header {
+      background: transparent;
+      display: flex;
+      color: #000;
+      padding: 20px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 60px;
+      position: fixed;
+      top: 0;
+      z-index: 10;
+      line-height: 1.15;
+      font-family: Poppins;
+      transition: all 0.5s
+    }
+
+    header.scrolled {
+      padding: 20px 80px;
+      background: #56463E;
+      color: white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    header.scrolled nav ul li a {
+      color: #fff;
+    }
+
+    header.scrolled nav ul li a::before {
+      background-color: #fff;
+    }
+
+    header.scrolled nav ul li a:hover {
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-family: "FTF Indonesiana Serif";
+      margin-left: 10px;
+      margin-right: auto;
+    }
+
+    header img {
+      height: 70px;
+      width: auto;
+      display: block;
+    }
+
+    nav {
+      margin-top: 0%;
+      position: sticky;
+      transform: none;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0%;
+      width: auto;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav ul li {
+      margin-left: 0;
+    }
+
+    nav ul li a {
+      color: #000;
+      text-decoration: none;
+      transition: 0.3s;
+      padding: 12px;
+      position: relative;
+      display: inline-block;
+    }
+
+    nav ul li a:hover {
+      color: #000;
+    }
+
+    nav ul li a::before {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background-color: #000;
+      transition: all .5s;
+    }
+
+    nav ul li a:hover::before {
+      width: 100%;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('lpwbe.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      padding: 50px 50px;
+      align-items: flex-start;
+      padding-left: 83px;
+    }
+
+    .hero-text {
+      position: absolute;
+      font-family: "FTF Indonesiana Serif";
+      margin-top: 100px;
+    }
+
+    .hero h1 {
+      font-weight: bold;
+      max-width: 500px;
+      font-size: 36px;
+      margin-bottom: 2px;
+      text-align: left;
+      left: 120px;
+      margin-top: 28%;
+    }
+
+    .hero p {
+      text-align: justify;
+      font-family: Poppins;
+      justify-content: center;
+      font-size: 12px;
+      max-width: 400px;
+      margin-bottom: 30px;
+    }
+
+    .hero button {
+      background-color: #56463E;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      ;
+    }
+
+    .searchbox {
+      margin-top: 0%;
+      margin-bottom: 0%;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .searchbox input {
+      border: none;
+      width: 160px;
+      background: #fff;
+      color: #000;
+      padding: 5px 15px;
+      border-radius: 20px 0 0 20px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .searchbox button {
+      background: #000;
+      border: none;
+      color: #000;
+      padding: 4px 15px;
+      border-radius: 0 20px 20px 0;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+      margin-bottom: 2px;
+    }
+
+    .searchbox button:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    .menu-icon {
+      font-size: 28PX;
+      display: none;
+    }
+
+    .description {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 80px;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 90px;
+      max-width: 1000px;
+      flex-direction: row-reverse;
+    }
+
+    .description2 {
+      flex-direction: row;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 80px;
+      background-color: #EBEBEB;
+    }
+
+    .description2 .container {
+      flex-direction: row;
+      display: flex;
+      align-items: center;
+      gap: 90px;
+      max-width: 1000px;
+    }
+
+    .description2 img {
+      object-fit: cover;
+      max-width: 365px;
+      height: 379px;
+      border-radius: 20px;
+      border: black;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .description img {
+      object-fit: cover;
+      max-width: 365px;
+      height: 379px;
+      border-radius: 20px;
+      border: black;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .description text {
+      text-align: justify;
+      max-width: 500px;
+      font-family: Poppins;
+    }
+
+    .description h1 {
+      text-align: justify;
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #000;
+      font-family: Poppins;
+    }
+
+    .description p {
+      color: #000;
+      text-align: justify;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-family: Poppins;
+    }
+
+    .description2 text {
+      text-align: justify;
+      justify-content: baseline;
+      max-width: 500px;
+      font-family: Poppins;
+    }
+
+    .description2 h1 {
+      text-align: justify;
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #000;
+      font-family: Poppins;
+    }
+
+    .description2 p {
+      color: #000;
+      text-align: justify;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-family: Poppins;
+    }
+
+    .description button {
+      background: #56463E;
+      color: #fff;
+      box-shadow: #000;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-family: Poppins;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .description2 button {
+      background: #56463E;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-family: Poppins;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .description a {
+      color: #f5f5f5;
+      text-decoration: none;
+    }
+
+    .description2 a {
+      color: #f5f5f5;
+      text-decoration: none;
+    }
+
+    .description button:hover {
+      background-color: #f5f5f5;
+      color: #56463E;
+    }
+
+    .description2 button:hover {
+      background-color: #f5f5f5;
+      color: #56463E;
+    }
+
+    .description button:hover a {
+      color: #56463E;
+    }
+
+    .description2 button:hover a {
+      color: #56463E;
+    }
+
+    .info-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px;
+      padding: 40px 20px;
+      border-radius: 15;
+      background-color: #fff;
+    }
+
+    .card {
+      background: transparent;
+      width: 265px;
+      height: 370px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .card img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .card-text {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      color: white;
+    }
+
+    .card-text h3 {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .card-text p {
+      color: #fff;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .card-text button {
+      background-color: #56463E;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      ;
+    }
+
+    .card-text a {
+      color: #f5f5f5;
+      background-color: #56463E;
+      text-decoration: none;
+    }
+
+    .card-text button:hover {
+      background-color: #fff;
+      color: #56463E;
+    }
+
+    .card-text button:hover a {
+      background-color: #fff;
+      color: #a78e82;
+    }
+
+    footer {
+      background-color: #56463E;
+      padding: 80px 0;
+      text-align: center;
+      border-top: 1px solid #eee;
+    }
+
+    .footer-logo {
+      margin-top: -30px;
+      margin-bottom: 10px;
+    }
+
+    .footer-logo img {
+      width: 75px;
+      height: 75px;
+    }
+
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+
+    .footer-nav {
+      margin-bottom: 15px;
+    }
+
+    .nav-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-family: Arial, sans-serif;
+      margin: 0 10px;
+    }
+
+    .nav-link:hover {
+      color: #777777;
+    }
+
+
+    .nav-separator {
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .footer-garis {
+      border-bottom: 2px solid #fff;
+      margin-bottom: 50px;
+      padding-bottom: 20px;
+      width: 80%;
+      margin-left: 120px;
+      justify-content: center;
+
+    }
+
+    @media only screen and (max-width: 600px) {
+      .container img {
+        width: 900px;
+      }
+
+      .hero {
+        height: 150vh;
+      }
+
+      .hero p {
+        text-align: justify;
+        font-family: Poppins;
+        justify-content: center;
+        font-size: 40px;
+        max-width: 500px;
+        margin-bottom: 30px;
+      }
+
+      .hero h1 {
+        font-size: 70px;
+        margin-top: 150px;
+        max-width: 800px;
+      }
+
+      .hero button {
+        display: none;
+      }
+
+      header {
+        height: 150px;
+        margin-bottom: 500px;
+      }
+
+      header img {
+        width: 200px;
+        height: 200px;
+      }
+
+      header h1 {
+        font-size: 70px;
+        margin: 250px;
+        margin-left: 50px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        margin-top: 510px;
+        position: absolute;
+        background-color: #56463E;
+        width: 225px;
+        font-size: 40px;
+        right: 10px;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      nav ul.hidden {
+        display: none;
+      }
+
+      .menu-icon {
+        display: flex;
+        align-items: center;
+        z-index: 9999;
+        font-size: 60px;
+        margin-left: -100px;
+      }
+
+
+      .menu-icon:hover {
+        cursor: pointer;
+      }
+
+      .searchbox {
+        display: none;
+      }
+
+      .menu-list {
+        width: 400px;
+      }
+
+      .description img {
+        display: flex;
+        height: 700px;
+        margin-top: 230px;
+      }
+
+      .description h1 {
+        margin-top: 120px;
+        font-size: 50px;
+      }
+
+      .description p {
+        font-size: 30px;
+      }
+
+      .description2 img {
+        display: flex;
+        height: 700px;
+        margin-top: 230px;
+      }
+
+      .description2 h1 {
+        margin-top: 120px;
+        font-size: 50px;
+      }
+
+      .description2 p {
+        font-size: 30px;
+      }
+
+      .description button {
+        display: flex;
+        width: 260px;
+        height: 100px;
+        font-size: 30px;
+        text-align: center;
+        padding: 25px;
+        padding-right: 50px;
+      }
+
+      .description2 button {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="heaader">
+    <img src="logonobg.png">
+    <h1>Culturenesia</h1>
+
+    <div id="menu-icon" class="menu-icon" onclick="">
+      ☰
+    </div>
+
+    <nav>
+      <ul id="menu-list" class="hidden">
+        <li><a href="LandingPage.html">Home</a></li>
+        <li><a href="about us.html">About Us</a></li>
+        <li><a href="about us.html">Contact</a></li>
+        <div class="searchbox">
+          <input type="text" placeholder="Search">
+          <button>🔎</button>
+        </div>
+        <li><a href="Login.html">Login</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <section class="hero">
+    <div class="gambar">
+      <div class="overlay">
+      </div>
+    </div>
+    <div class="hero-text">
+      <h1><b>MERAJUT KEINDAHAN BUDAYA NUSANTARA</b></h1>
+    </div>
+  </section>
+
+  <section class="description">
+    <div class="container">
+      <?php
+$query = "SELECT * FROM tb_konten WHERE kategori = 'Rumah Adat' AND id = 3";
+$sql = mysqli_query($conn, $query);
+
+if ($row = mysqli_fetch_array($sql)) {
+    ?>
+      <img src="path_ke_folder_gambar/<?php echo $row['gambar']; ?>" alt="Rumah Adat">
+
+      <?php 
+} else {
+    echo "Data Rumah Adat dengan ID 3 tidak ditemukan.";
+}
+?>
+      <img src="path_ke_folder_gambar/<?php echo $row['gambar']; ?>" alt="Rumah Adat">
+      <div class="text">
+        <h1>BAJU ADAT</h1>
+        <P>Baju adat Indonesia adalah pakaian tradisional khas setiap suku dan daerah yang mencerminkan budaya, status
+          sosial, serta nilai-nilai leluhur. Setiap daerah memiliki ciri unik, seperti motif khas, warna simbolis, dan
+          aksesoris tradisional. Contohnya Ulos dari Batak, Kebaya dari Jawa dan Bali, Baju Bodo dari Sulawesi Selatan,
+          Koteka dari Papua, dan Pakaian Adat Aceh yang dikenal dengan keemasan. Baju adat biasanya dipakai pada upacara
+          adat, pernikahan, tari tradisional, atau hari besar budaya.</P>
+        <button><a href="Card baju adat.html">Selengkapnya</a></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="description2">
+    <div class="container">
+      <img src="Rumah adat lp.png">
+      <div class="text">
+        <h1>RUMAH ADAT INDONESIA</h1>
+        <P>Indonesia memiliki beragam rumah adat yang mencerminkan budaya tiap daerah, seperti Rumah Joglo dari Jawa,
+          Rumah Gadang dari Sumatera Barat, Rumah Tongkonan dari Toraja, dan Rumah Honai dari Papua. Bentuknya
+          bervariasi seperti panggung, limas, hingga kerucut, dengan bahan alami seperti kayu, bambu, dan jerami.</P>
+        <button><a href="Card rumah adat.html">Selengkapnya</a></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="description">
+    <div class="container">
+      <img src="kolintang.jpg">
+      <div class="text">
+        <h1>ALAT MUSIK TRADISIONAL</h1>
+        <P>Alat musik tradisional Indonesia adalah instrumen musik khas dari berbagai daerah yang dibuat dengan bahan
+          alami seperti kayu, bambu, logam, atau kulit. Setiap alat musik memiliki cara memainkan yang berbeda-dipukul,
+          ditiup, dipetik, atau digesek-dan biasanya digunakan dalam upacara adat, pertunjukan seni, serta tarian
+          tradisional.</P>
+        <button><a href="Card alat musik.html">Selengkapnya</a></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-cards">
+    <div class="card">
+      <img src="rumah sasadu.jpg" alt="baju adat">
+      <div class="card-text">
+        <h3>RUMAH ADAT</h3>
+        <p>Setiap daerah memiliki bentuk rumah adat yang unik dan mencerminkan budaya lokal.</p>
+        <button><A href="Card rumah adat.html">Selengkapnya</A></button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="saluang.jpg" alt="Alat Musik">
+      <div class="card-text">
+        <h3>ALAT MUSIK TRADISIONAL</h3>
+        <p>Alat musik tradisional merupakan bagian penting dalam upacara adat dan hiburan rakyat.</p>
+        <button><a href="Card alat musik.html">Selengkapnya</a></button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="baju adat payas agung.jpg" alt="Baju Adat">
+      <div class="card-text">
+        <h3>BAJU ADAT</h3>
+        <p>Baju adat dikenakan dalam acara-acara tertentu seperti upacara dan perayaan budaya.</p>
+        <button><a href="Card baju adat.html">Selengkapnya</a></button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="logonobg.png" alt="logo">
+      </div>
+      <nav class="footer-nav">
+        <a href="#" class="nav-link">ABOUT US</a>
+        <span class="nav-separator">|</span>
+        <a href="#" class="nav-link">HOME</a>
+        <span class="nav-separator">|</span>
+        <a href="#" class="nav-link">CONTACTS</a>
+      </nav>
+      <div class="footer-garis"></div>
+    </div>
+  </footer>
+
+  <script>
+    const headerEl = document.querySelector('header');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        headerEl.classList.add('scrolled');
+      } else {
+        headerEl.classList.remove('scrolled');
+      }
+    })
+
+    const menuIcon = document.getElementById("menu-icon");
+    const menuList = document.getElementById("menu-list");
+
+    menuIcon.addEventListener("click", () => {
+      menuList.classList.toggle("hidden");
+
+    });
+  </script>
+</body>
+
+</html>
